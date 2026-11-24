@@ -9,24 +9,33 @@ waterWindow = int(input("Please enter your water window: ")) # this will be used
 multiRun = int(input("How many zones can you run at once? ")) # some properties allow users to run more than one zone at a time this variable was added so that it can allow users to see total wtaering time if they ran more than one zone at a time
 
 # ^^^ up above are all the values that will be entered by the users
+
 # function 1
 def pop ():
     return(popups * ptime / 60 / multiRun)
 pop()
+
 # function2    
 def rotr():
     return(rotors * rtime /60 / multiRun)
 rotr()
+
 # function 3    
 def mp():
     return(mprotor * mtime /60 / multiRun)
 mp()
+
 # function 4     
 def totalWaterTime():
     return(int(pop() + rotr() + mp()))
 totalWaterTime()
 # ^^^ above are all my functions that i can test individually each one takes an input from the user to use in the math and will spit out a number that funstion 4 will use to calculate total watering time.
+
 while totalWaterTime() > waterWindow:
-    print("Your total watering time is over the water window. You will have to adjust your watering times or apply for a watering variance if they water window is set by your local governemt.")
-    if totalWaterTime() < waterWindow:
-        print("You can water safely within the water window")
+    print("Your total watering time is over the water window, ", waterWindow, "." "You will have to adjust your watering times or apply for a watering variance if they water window is set by your local governemt.")
+    ptime= int(input("How long do you want pop-ups to run? "))
+    rtime= int(input("How long do you want rotors to run? "))
+    mtime= int(input("How long do you want mp-rotors to run? "))
+
+if totalWaterTime() <= waterWindow > 0:
+        print("You can water safely within the water window. Your total water time is: ", totalWaterTime(), "hrs.")
