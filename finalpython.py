@@ -33,7 +33,7 @@ totalWaterTime()
 while True:
 
     while totalWaterTime() > waterWindow:
-        print("Your total watering time",totalWaterTime(),"hrs is over the water window, ",waterWindow, "hrs." "You will have to adjust your watering times or apply for a watering variance if they water window is set by your local governemt.")
+        print("Your total watering time",totalWaterTime(),"hrs is over the water window, ",waterWindow, "hrs." " You will have to adjust your watering times or apply for a watering variance if they water window is set by your local governemt.")
         ptime= int(input("How long do you want pop-ups to run? "))
         rtime= int(input("How long do you want rotors to run? "))
         mtime= int(input("How long do you want mp-rotors to run? "))
