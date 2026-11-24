@@ -12,30 +12,36 @@ multiRun = int(input("How many zones can you run at once? ")) # some properties 
 
 # function 1
 def pop ():
-    return(popups * ptime / 60 / multiRun)
+    return(float(popups * ptime / 60 / multiRun))
 pop()
 
 # function2    
 def rotr():
-    return(rotors * rtime /60 / multiRun)
+    return(float(rotors * rtime /60 / multiRun))
 rotr()
 
 # function 3    
 def mp():
-    return(mprotor * mtime /60 / multiRun)
+    return(float(mprotor * mtime /60 / multiRun))
 mp()
 
 # function 4     
 def totalWaterTime():
-    return(int(pop() + rotr() + mp()))
+    return(float(pop() + rotr() + mp()))
 totalWaterTime()
-# ^^^ above are all my functions that i can test individually each one takes an input from the user to use in the math and will spit out a number that funstion 4 will use to calculate total watering time.
+# ^^^ above are all my functions that i can test individually each one takes multiple inputs from the user to use in the math and will spit out a number that funstion 4 will use to calculate total watering time.
+while True:
 
-while totalWaterTime() > waterWindow:
-    print("Your total watering time",totalWaterTime(),"hrs is over the water window, ", waterWindow, "hrs." "You will have to adjust your watering times or apply for a watering variance if they water window is set by your local governemt.")
-    ptime= int(input("How long do you want pop-ups to run? "))
-    rtime= int(input("How long do you want rotors to run? "))
-    mtime= int(input("How long do you want mp-rotors to run? "))
+    while totalWaterTime() > waterWindow:
+        print("Your total watering time",totalWaterTime(),"hrs is over the water window, ",waterWindow, "hrs." "You will have to adjust your watering times or apply for a watering variance if they water window is set by your local governemt.")
+        ptime= int(input("How long do you want pop-ups to run? "))
+        rtime= int(input("How long do you want rotors to run? "))
+        mtime= int(input("How long do you want mp-rotors to run? "))
 
-if totalWaterTime() <= waterWindow > 0:
+    if totalWaterTime() <= waterWindow > 0:
         print("You can water safely within the water window. Your total water time is: ", totalWaterTime(), "hrs.")
+
+    newProperty = input("Do you want to enter a new property? (y/n): ") .strip() .lower()
+    if newProperty!= "y":
+            print("Bye!")
+            break
