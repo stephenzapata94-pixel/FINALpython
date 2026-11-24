@@ -1,22 +1,21 @@
 popups = int(input("Please enter total popups zones on property:" ))
 rotors = int(input("Please enter total rotor zones on property:"))
 mprotor = int(input("Please enter total mp-rotors zones on property:"))
-waterWindow = 16
+waterWindow = int(input("Please enter your water window:"))
 
 def pop ():
-    print(popups * 10 / 60)
-    return pop()
+    return(popups * 10 / 60)
+    
 
 def rotr():
-    print(rotors * 25 /60)
-    return rotr()
+    return(rotors * 25 /60)
+    
 
 def mp():
-    print(mprotor * 20 /60)
-    return mp()
+    return(mprotor * 20 /60)
+    
 
-def totalWaterTime():
-    waterTime= pop() + rotr() + mp()
-    return (waterTime)
+print(mp() + rotr())
+    
 
 
