@@ -1,17 +1,23 @@
 popups = int(input("Please enter total popups zones on property:" ))
 rotors = int(input("Please enter total rotor zones on property:"))
 mprotor = int(input("Please enter total mp-rotors zones on property:"))
+
 waterWindow = int(input("Please enter your water window:"))
+
+ptime= int(input("How long do you want pop-ups to run?"))
+rtime= int(input("How long do you want rotors to run?"))
+mtime= int(input("How long do you want mp-rotors to run?"))
 # ^^^ up above are all the values that will be entered by the users
 def pop ():
-    return(popups * 10 / 60)
+    return(popups * ptime / 60)
     
 def rotr():
-    return(rotors * 25 /60)
+    return(rotors * rtime /60)
     
 def mp():
-    return(mprotor * 20 /60)
+    return(mprotor * mtime /60)
     
 def totalWaterTime():
     print(int(pop() + rotr() + mp()))
 totalWaterTime()
+# ^^^ above are all my functions that i can test individually each one takes an input from the user to use in the math and will spit out a number that funstion 4 will use to calculate total watering time
